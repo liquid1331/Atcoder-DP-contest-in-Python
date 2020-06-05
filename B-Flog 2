@@ -1,0 +1,15 @@
+import sys
+n,k=map(int,input().split())
+# k=2
+l=list(map(int,input().split()))
+ans=[0,abs(l[1]-l[0])]
+for i in range(2,n):
+    m=sys.maxsize
+    c=1
+    while c<min(k+1,i+1):
+        
+        m=min(abs(l[i]-l[i-c])+ans[-c],m)
+        c+=1
+    ans.append(m)
+# print(ans)
+print(ans[-1])
